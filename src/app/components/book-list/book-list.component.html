@@ -1,0 +1,101 @@
+<div class="fwdht" fxLayout="column" *ngIf="!isMobile">
+    <div class="search-box-container">
+        <div class="sub-container" fxLayout="column">
+            <div fxLayout="column" style="margin-bottom: 10px;">
+                <div class="title-header" fxLayout="row" fxLayoutAlign="start center">
+                    <div>
+                        <img src="../../../assets/Back.svg" height="25px" width="25px" (click)="navigate()" />
+                    </div>
+                    <h2 style="margin-left: 10px !important;">
+                        {{selectedCategory | titlecase}}
+                    </h2>
+                </div>
+                <form [formGroup]="coolForm">
+                    <div class="search-box" fxLayout="row" fxLayoutAlign="start center">
+                        <img src="../../../assets/Search.svg" height="20px" width="20px" style="padding-left: 10px;" />
+                        <mat-form-field floatLabel="never" style="width: 100%;" appearance="none">
+                            <input type="text" matInput formControlName= "search">
+                        </mat-form-field>
+                        <img src="../../../assets/Cancel.svg" *ngIf="showClose" height="15px" width="15px" style="padding-right: 10px;" (click)="clearSearch()" />
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="card-container" fxFlex>
+        <div class="sub-container" fxLayout="row wrap" fxLayoutAlign="start start">
+            <div class="book-data" *ngFor="let book of booksData" (click)="openBookData(book.formats)">
+                <div class="book-card">
+                    <div class="book-img">
+                        <img [src]="book.formats['image/jpeg']" class="rectangle" />
+                    </div>
+                    <div class="book-title">
+                        <div>{{book?.title}}</div>
+                    </div>
+                    <div class="book-author">
+                        <div>{{book?.authors[0]?.name | reverseStr }}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="button-container">
+        <button class="previous-button" (click)="previousClicked()" [disabled]="disablePrevious">
+            <img src="../../../assets/Back.svg" style="float:left;margin-right:0.5em" width="20px" height="20px">Previous
+        </button>
+        <button class="next-button" (click)="nextClicked()" [disabled]="disableNext">
+            <img src="../../../assets/Next.svg" style="float: right;margin-left:0.5em" width="20px" height="20px">Next
+        </button>
+    </div>
+</div>
+
+<div class="fwdht" fxLayout="column" *ngIf="isMobile">
+    <div class="search-box-container">
+        <div class="sub-container" fxLayout="column">
+            <div fxLayout="column" style="margin: 20px;">
+                <div class="title-header-mob" fxLayout="row" fxLayoutAlign="start center">
+                    <!-- <div> -->
+                    <img src="../../../assets/Back.svg" height="20px" width="20px" (click)="navigate()" />
+                    <!-- </div> -->
+                    <h2 style="margin-left: 10px !important; font-weight: 100;">
+                        {{selectedCategory | titlecase}}
+                    </h2>
+                </div>
+                <form [formGroup]="coolForm">
+                    <div class="search-box" fxLayout="row" fxLayoutAlign="start center">
+                        <img src="../../../assets/Search.svg" height="20px" width="20px" style="padding-left: 10px;" />
+                        <mat-form-field floatLabel="never" style="width: 100%;" appearance="none">
+                            <input type="text" matInput formControlName= "search">
+                        </mat-form-field>
+                        <img src="../../../assets/Cancel.svg" *ngIf="showClose" height="15px" width="15px" style="padding-right: 10px;" (click)="clearSearch()" />
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="card-container" fxFlex>
+        <div class="sub-container" fxLayout="row wrap" fxLayoutAlign="start start">
+            <div class="book-data-mob" *ngFor="let book of booksData" (click)="openBookData(book.formats)">
+                <div class="book-card-mob">
+                    <div class="book-img">
+                        <img [src]="book.formats['image/jpeg']" class="rectangle-mob" />
+                    </div>
+                    <div class="book-title-mob">
+                        <div>{{book?.title}}</div>
+                    </div>
+                    <div class="book-author-mob">
+                        <div>{{book?.authors[0]?.name | reverseStr }}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="button-container">
+        <button class="previous-button" (click)="previousClicked()" [disabled]="disablePrevious">
+            <img src="../../../assets/Back.svg" style="float:left;margin-right:0.5em" width="20px" height="20px">Previous
+        </button>
+        <button class="next-button" (click)="nextClicked()" [disabled]="disableNext">
+            <img src="../../../assets/Next.svg" style="float: right;margin-left:0.5em" width="20px" height="20px">Next
+        </button>
+    </div>
+</div>

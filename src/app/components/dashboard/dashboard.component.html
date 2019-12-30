@@ -1,0 +1,51 @@
+<div class="fwdht" fxLayout="column" style="background: #F8F7FF;" *ngIf="!isMobile">
+    <div class="search-box-container" style="background-image: url(../../../assets/Pattern.svg);">
+        <div class="sub-container" fxLayout="column">
+            <div class="header">
+                <h1 class="header-line">Gutenberg Project</h1>
+                <h2 class="headline"> A social cataloging website that allows you to freely search its database of books, annotations, and reviews.</h2>
+            </div>
+        </div>
+    </div>
+    <div class="card-container" fxFlex>
+        <div class="categoryContainer" fxLayout="row" fxLayoutAlign="start start" fxLayoutWrap>
+            <div class="genre-card pointer" *ngFor="let cat of categories" fxLayout="row" fxFlex="40" fxLaypoutAlign="start center" fxLayoutWrap (click)="getBooks(cat.title)">
+                <div fxFlex="10" fxLayoutAlign="start center">
+                    <img src="{{cat.img_icon}}" height="25px" width="25px" />
+                </div>
+                <div class="genre" fxFlex="80">
+                    {{cat.title | uppercase}}
+                </div>
+                <div fxFlex="10" fxLayoutAlign="end center">
+                    <img src="../../../assets/Next.svg" height="25px" width="25px" />
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="fwdht" fxLayout="column" style="background: #F8F7FF;" *ngIf="isMobile">
+    <div class="search-box-container" style="background-image: url(../../../assets/Pattern.svg);">
+        <div class="sub-container" fxLayout="column">
+            <div class="header-mob">
+                <h1 class="header-line">Gutenberg Project</h1>
+                <h2 class="headline-mob"> A social cataloging website that allows you to freely search its database of books, annotations, and reviews.</h2>
+            </div>
+        </div>
+    </div>
+    <div class="card-container" fxFlex>
+        <div class="categoryContainer" fxLayout="column" fxLayoutAlign="start start">
+            <div class="genre-card-mob pointer" *ngFor="let cat of categories" fxLaypoutAlign="start center" (click)="getBooks(cat.title)">
+                <div fxFlex="10" fxLayoutAlign="start center">
+                    <img src="{{cat.img_icon}}" height="25px" width="25px" />
+                </div>
+                <div class="genre" fxFlex="80">
+                    {{cat.title | uppercase}}
+                </div>
+                <div fxFlex="10" fxLayoutAlign="end center">
+                    <img src="../../../assets/Next.svg" height="25px" width="25px" />
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

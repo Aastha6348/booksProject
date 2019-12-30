@@ -1,0 +1,77 @@
+.header {
+    padding: 50px;
+}
+
+.header-mob {
+    padding: 25px;
+}
+
+.header-line {
+    color: #5E56E7;
+    margin-bottom: 16px;
+}
+
+.headline {
+    /* font-size: 20px; */
+    color: #333333;
+}
+
+.headline-mob {
+    font-size: 14px !important;
+    line-height: 20px !important;
+}
+
+.container {
+    background-color: #F8F7FF;
+    padding: 5rem 5rem 5rem 5rem;
+}
+
+.catalog {
+    flex: 0 50%;
+    background-color: white;
+    color: #5E56E7;
+    font-weight: bold;
+    width: 600px;
+    height: 50px;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px 0 rgba(211, 209, 238, 0.5);
+    margin-bottom: 2rem;
+}
+
+.categoryContainer {
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1300px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    height: 100%;
+}
+
+.catalog {
+    margin-bottom: 2rem;
+}
+
+.genre-card {
+    padding: 10px;
+    margin: 10px;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px 0 rgba(211, 209, 238, 0.5);
+    font-size: 20px;
+    background: white;
+}
+
+.genre-card-mob {
+    padding: 10px;
+    margin: 10px;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px 0 rgba(211, 209, 238, 0.5);
+    font-size: 20px;
+    background: white;
+    width: 90%;
+}
+
+.genre-card:nth-child(2n) {
+    margin-left: 200px;
+}
